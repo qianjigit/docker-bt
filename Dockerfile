@@ -2,7 +2,8 @@ FROM centos:7
 
 #更新系统
 RUN yum -y update \
-    && yum -y install wget
+    && yum -y install wget \
+    && yum clean all
 
 #设置entrypoint和letsencrypt映射到www文件夹下持久化
 COPY entrypoint.sh /entrypoint.sh
