@@ -12,6 +12,7 @@ RUN mkdir -p /www/letsencrypt \
     && mkdir /www/init.d \
     && ln -s /www/init.d /etc/init.d \
     && chmod +x /entrypoint.sh
+    && yum clean all
 
 CMD /entrypoint.sh
 EXPOSE 8888 888 21 20 443 80
