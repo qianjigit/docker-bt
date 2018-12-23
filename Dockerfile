@@ -11,7 +11,7 @@ RUN mkdir -p /www/letsencrypt \
     && rm -f /etc/init.d \
     && mkdir /www/init.d \
     && ln -s /www/init.d /etc/init.d \
-    && chmod +x /entrypoint.sh
+    && chmod +x /entrypoint.sh \
     && yum clean all
 
 CMD /entrypoint.sh
