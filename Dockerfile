@@ -1,0 +1,9 @@
+FROM l2share/bt:clear
+MAINTAINER l2share
+    
+RUN bash /www/server/panel/install/install_soft.sh 0 install nginx 1.17
+RUN bash /www/server/panel/install/install_soft.sh 0 install php 7.2 || echo 'Ignore Error'
+RUN bash /www/server/panel/install/install_soft.sh 0 install php 7.3 || echo 'Ignore Error'
+RUN echo '["linuxsys", "webssh", "nginx", "php-7.2", "php-7.3"]' > /www/server/panel/config/index.json
+
+VOLUME ["/www","/www/wwwroot"]
