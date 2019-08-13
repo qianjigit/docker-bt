@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER pch18.cn
+MAINTAINER l2share
 
 #设置entrypoint和letsencrypt映射到www文件夹下持久化
 COPY entrypoint.sh /entrypoint.sh
@@ -25,6 +25,6 @@ RUN cd /home \
 
 WORKDIR /www/wwwroot
 CMD /entrypoint.sh
-EXPOSE 8888 888 21 20 443 80
+EXPOSE 8888 443 80
 
 HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost:8888/ && curl -fs http://localhost/ || exit 1 
